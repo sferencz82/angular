@@ -1,0 +1,57 @@
+[
+  {
+    "id": "7b3c8bd7-0c62-40b3-8c2a-3418b8361d6a",
+    "customerId": "1f7e1d48-2db4-4df4-a21c-8b5b1e1d88d7",
+    "carId": "a111c28f-26bb-4c8c-8d1d-73f94b551962",
+    "location": "Zurich Central Station",
+    "priceChf": 18.50,
+    "durationMinutes": 32,
+    "energyKWh": 22.4,
+    "estimatedRangeKm": 150,
+    "startTimeUtc": "2024-03-01T17:45:00Z"
+  },
+  {
+    "id": "0d8f3c39-4a39-4bfa-9c33-4a8898dc609d",
+    "customerId": "1f7e1d48-2db4-4df4-a21c-8b5b1e1d88d7",
+    "carId": "a222086f-96f7-4f00-bbdc-34c3af1e97f9",
+    "location": "Winterthur Supercharger",
+    "priceChf": 24.10,
+    "durationMinutes": 40,
+    "energyKWh": 31.5,
+    "estimatedRangeKm": 210,
+    "startTimeUtc": "2024-02-25T09:20:00Z"
+  },
+  {
+    "id": "bea5bf87-3481-4c6f-8cfa-0e2d3e8cf0ef",
+    "customerId": "0b369c01-66f3-4f1a-b84f-5bf3f34d2181",
+    "carId": "b1113fd3-9f0b-4c77-bf49-0b75399fa659",
+    "location": "Basel City Parking",
+    "priceChf": 14.75,
+    "durationMinutes": 28,
+    "energyKWh": 18.2,
+    "estimatedRangeKm": 130,
+    "startTimeUtc": "2024-03-05T12:10:00Z"
+  },
+  {
+    "id": "9c97c71e-7fd0-4f60-9f3d-9988d8b4a0ad",
+    "customerId": "5b60f674-782b-4131-8129-5570da3c6c41",
+    "carId": "c222ff5a-d5d9-4f49-8120-6ee6485d4e42",
+    "location": "Bern Old Town Garage",
+    "priceChf": 11.60,
+    "durationMinutes": 25,
+    "energyKWh": 15.1,
+    "estimatedRangeKm": 120,
+    "startTimeUtc": "2024-03-10T18:00:00Z"
+  },
+  {
+    "id": "1a4b0df8-9f13-4f7d-9c21-6c12ce18ee0d",
+    "customerId": "5b60f674-782b-4131-8129-5570da3c6c41",
+    "carId": "c1111a9f-f5c3-45bf-af7d-81b5336b7e5c",
+    "location": "Thun Lakeside",
+    "priceChf": 6.40,
+    "durationMinutes": 18,
+    "energyKWh": 8.6,
+    "estimatedRangeKm": 55,
+    "startTimeUtc": "2024-03-02T07:50:00Z"
+  }
+]

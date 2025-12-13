@@ -1,0 +1,63 @@
+[
+  {
+    "id": "1f7e1d48-2db4-4df4-a21c-8b5b1e1d88d7",
+    "name": "Sofia Moser",
+    "email": "sofia.moser@example.com",
+    "cars": [
+      {
+        "id": "a111c28f-26bb-4c8c-8d1d-73f94b551962",
+        "make": "Tesla",
+        "model": "Model 3",
+        "type": "BEV",
+        "batteryKWh": 62.3,
+        "plate": "ZH-40321"
+      },
+      {
+        "id": "a222086f-96f7-4f00-bbdc-34c3af1e97f9",
+        "make": "VW",
+        "model": "ID.4",
+        "type": "BEV",
+        "batteryKWh": 77,
+        "plate": "ZH-81200"
+      }
+    ]
+  },
+  {
+    "id": "0b369c01-66f3-4f1a-b84f-5bf3f34d2181",
+    "name": "Jonas Keller",
+    "email": "jonas.keller@example.com",
+    "cars": [
+      {
+        "id": "b1113fd3-9f0b-4c77-bf49-0b75399fa659",
+        "make": "Hyundai",
+        "model": "Kona Electric",
+        "type": "BEV",
+        "batteryKWh": 64,
+        "plate": "AG-55091"
+      }
+    ]
+  },
+  {
+    "id": "5b60f674-782b-4131-8129-5570da3c6c41",
+    "name": "Lina Vogt",
+    "email": "lina.vogt@example.com",
+    "cars": [
+      {
+        "id": "c1111a9f-f5c3-45bf-af7d-81b5336b7e5c",
+        "make": "Volvo",
+        "model": "XC60 Recharge",
+        "type": "PHEV",
+        "batteryKWh": 18.8,
+        "plate": "BE-21900"
+      },
+      {
+        "id": "c222ff5a-d5d9-4f49-8120-6ee6485d4e42",
+        "make": "Renault",
+        "model": "Megane E-Tech",
+        "type": "BEV",
+        "batteryKWh": 60,
+        "plate": "BE-34485"
+      }
+    ]
+  }
+]

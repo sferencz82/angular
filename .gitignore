@@ -37,6 +37,10 @@ yarn-error.log
 testem.log
 /typings
 
+# .NET build output
+/server/bin/
+/server/obj/
+
 # System files
 .DS_Store
 Thumbs.db

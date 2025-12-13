@@ -1,0 +1,82 @@
+<div id="fixed-bg" aria-hidden="true">
+  <button class="back-btn" type="button" aria-label="Back" (click)="goBack()">
+    <!-- simple left arrow icon -->
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M14.7 6.3a1 1 0 0 1 0 1.4L11.41 11H20a1 1 0 1 1 0 2h-8.59l3.3 3.3a1 1 0 1 1-1.42 1.4l-5-5a1 1 0 0 1 0-1.4l5-5a1 1 0 0 1 1.41 0z"
+      />
+    </svg>
+  </button>
+
+<div class="mc" aria-label="Merry Christmas">
+  <svg class="mc-svg" viewBox="0 0 900 160" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+    <defs>
+      <!-- soft glow for bulbs -->
+      <filter id="mcGlow" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="2.2" result="blur"/>
+        <feMerge>
+          <feMergeNode in="blur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+
+      <!-- repeating-ish color gradient across the whole line -->
+      <linearGradient id="mcBulbGrad" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0%"   stop-color="#ff3b3b"/>
+        <stop offset="20%"  stop-color="#27c265"/>
+        <stop offset="40%"  stop-color="#ffd64f"/>
+        <stop offset="60%"  stop-color="#50c8ff"/>
+        <stop offset="80%"  stop-color="#ff3b3b"/>
+        <stop offset="100%" stop-color="#27c265"/>
+      </linearGradient>
+
+      <!-- clip snow to the text fill -->
+      <clipPath id="mcTextClip">
+        <text class="mc-font mc-clip" x="330" y="105" text-anchor="middle">Merry</text>
+        <text class="mc-font mc-clip" x="600" y="105" text-anchor="middle">Christmas</text>
+      </clipPath>
+    </defs>
+
+    <!-- FILLED TEXT -->
+    <g class="mc-fill">
+      <text class="mc-font mc-merry" x="330" y="105" text-anchor="middle">Merry</text>
+      <text class="mc-font mc-xmas"  x="600" y="105" text-anchor="middle">Christmas</text>
+    </g>
+
+    <!-- WIRE (subtle outline) -->
+    <g class="mc-wire">
+      <text class="mc-font mc-stroke" x="330" y="105" text-anchor="middle">Merry</text>
+      <text class="mc-font mc-stroke" x="600" y="105" text-anchor="middle">Christmas</text>
+    </g>
+
+    <!-- BULB LIGHTS (dashed stroke on the glyph outlines) -->
+    <g class="mc-bulbs" filter="url(#mcGlow)">
+      <text class="mc-font mc-bulbStroke" x="330" y="105" text-anchor="middle">Merry</text>
+      <text class="mc-font mc-bulbStroke" x="600" y="105" text-anchor="middle">Christmas</text>
+    </g>
+
+    <!-- SNOW INSIDE LETTERS -->
+    <g class="mc-snow" clip-path="url(#mcTextClip)">
+      <circle class="flake f1"  cx="120" cy="40" r="2.2"/>
+      <circle class="flake f2"  cx="180" cy="20" r="1.7"/>
+      <circle class="flake f3"  cx="260" cy="55" r="1.9"/>
+      <circle class="flake f4"  cx="340" cy="25" r="2.0"/>
+      <circle class="flake f5"  cx="420" cy="50" r="1.6"/>
+      <circle class="flake f6"  cx="520" cy="30" r="2.1"/>
+      <circle class="flake f7"  cx="600" cy="60" r="1.8"/>
+      <circle class="flake f8"  cx="680" cy="22" r="2.0"/>
+      <circle class="flake f9"  cx="760" cy="48" r="1.6"/>
+      <circle class="flake f10" cx="820" cy="35" r="2.2"/>
+    </g>
+  </svg>
+</div>
+
+
+  <canvas
+    #canvas
+    (pointermove)="onPointerMove($event)"
+    (pointerdown)="onPointerMove($event)"
+    (pointerleave)="onPointerLeave()"
+  ></canvas>
+</div>

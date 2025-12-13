@@ -1,0 +1,140 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Fullscreen fixed background like in the screenshot */
+#fixed-bg {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Canvas centered and scaled to viewport */
+canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+canvas {
+  touch-action: none; /* important for mobile pointer events */
+}
+
+.back-btn{
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.back-btn:hover{ background: rgba(0,0,0,0.5); }
+.back-btn:active{ transform: translateY(1px); }
+.back-btn:focus-visible{ outline: 2px solid rgba(255,255,255,0.8); outline-offset: 2px; }
+
+/* Position + script style */
+.mc{
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mc-svg{
+  width: min(92vw, 760px);
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* Font (script) */
+.mc-font{
+  font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand", "Apple Chancery", cursive;
+  font-size: 92px;
+  font-style: italic;
+}
+
+/* Filled colors */
+.mc-merry{ fill: #27c265; }
+.mc-xmas { fill: #ff3b3b; }
+
+/* Subtle wire outline */
+.mc-stroke{
+  fill: none;
+  stroke: rgba(255,255,255,0.12);
+  stroke-width: 3;
+}
+
+/* Bulb stroke (this is the “lights wrapped on outline”) */
+.mc-bulbStroke{
+  fill: none;
+  stroke: url(#mcBulbGrad);
+  stroke-width: 4;
+  stroke-linecap: round;
+
+  /* bulbs: tiny dash + gap */
+  stroke-dasharray: 1 10;
+
+  /* slow light up / fade + gentle chase */
+  animation: mcBulbsMove 7.5s linear infinite, mcBulbsPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes mcBulbsMove{
+  /* dashoffset creates the “wrapped lights moving” feel */
+  to { stroke-dashoffset: -240; }
+}
+
+@keyframes mcBulbsPulse{
+  0%,100% { opacity: 0.35; filter: brightness(0.9); }
+  50%     { opacity: 1;    filter: brightness(1.25); }
+}
+
+/* Snow inside the text */
+.mc-snow .flake{
+  fill: rgba(255,255,255,0.9);
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.35));
+  animation: mcSnowFall 3.6s linear infinite;
+}
+
+@keyframes mcSnowFall{
+  0%   { transform: translateY(-18px); opacity: 0.0; }
+  15%  { opacity: 0.85; }
+  85%  { opacity: 0.85; }
+  100% { transform: translateY(26px); opacity: 0.0; }
+}
+
+/* Stagger snow (different speeds/delays) */
+.f1  { animation-duration: 3.2s; animation-delay: -0.4s; }
+.f2  { animation-duration: 3.8s; animation-delay: -1.1s; }
+.f3  { animation-duration: 3.4s; animation-delay: -2.0s; }
+.f4  { animation-duration: 4.0s; animation-delay: -1.7s; }
+.f5  { animation-duration: 3.1s; animation-delay: -0.9s; }
+.f6  { animation-duration: 3.7s; animation-delay: -2.4s; }
+.f7  { animation-duration: 3.3s; animation-delay: -1.4s; }
+.f8  { animation-duration: 4.1s; animation-delay: -2.8s; }
+.f9  { animation-duration: 3.5s; animation-delay: -0.2s; }
+.f10 { animation-duration: 3.9s; animation-delay: -2.2s; }
+

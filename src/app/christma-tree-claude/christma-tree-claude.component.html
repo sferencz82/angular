@@ -1,0 +1,41 @@
+<div class="christmas-container">
+  <!-- Starry background -->
+  <div class="stars">
+    <div 
+      *ngFor="let star of getStars(); let i = index" 
+      class="star"
+      [style.left.%]="(i * 7.2347) % 100"
+      [style.top.%]="(i * 5.8321) % 100"
+      [style.animation-delay]="(i * 0.05) + 's'">
+    </div>
+  </div>
+
+  <!-- Mouse glow effect -->
+  <div 
+    class="mouse-glow" 
+    [style.left.px]="mouseX" 
+    [style.top.px]="mouseY">
+  </div>
+
+  <!-- Christmas tree -->
+  <div class="tree-container">
+    <!-- Tree shape (triangle) -->
+    <div class="tree"></div>
+    
+    <!-- Tree trunk -->
+    <div class="trunk"></div>
+    
+    <!-- Animated lights -->
+    <div class="lights-container">
+      <div 
+        *ngFor="let light of lights"
+        class="light"
+        [style.left.%]="light.x"
+        [style.top.%]="light.currentY || light.y"
+        [style.width.px]="light.size"
+        [style.height.px]="light.size"
+        [style.opacity]="light.opacity">
+      </div>
+    </div>
+  </div>
+</div>

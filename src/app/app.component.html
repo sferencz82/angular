@@ -1,19 +1,18 @@
-
-
 <main class="main">
   <nav>
     <ul>
       <li><a routerLink="/">Home</a></li>
       <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/customers">Customers</a></li>
+      <li><a routerLink="/charges">Recent Charges</a></li>
       <li><a routerLink="/christmas">Christmas</a></li>
-      <li><a routerLink="/christmas-claude">Christmas</a></li>
+      <li><a routerLink="/christmas-claude">Christmas (Claude)</a></li>
     </ul>
-    
-    
   </nav>
+
   <div class="content">
-          <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-      </div>
+    <h1>Hello, {{ title }}</h1>
+    <p>Congratulations! Your app is running. 🎉</p>
+  </div>
 </main>
 <router-outlet></router-outlet>

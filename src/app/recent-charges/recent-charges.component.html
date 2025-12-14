@@ -1,0 +1,36 @@
+<section class="charges">
+  <header>
+    <h2>Recent Charges</h2>
+    <p>Latest charging sessions across all customers.</p>
+  </header>
+
+  <div class="status" *ngIf="isLoading">Loading charges…</div>
+  <div class="status error" *ngIf="!isLoading && errorMessage">{{ errorMessage }}</div>
+
+  <div class="charge-grid" *ngIf="!isLoading && !errorMessage">
+    <article class="charge-card" *ngFor="let charge of charges">
+      <div class="charge-header">
+        <span class="location">{{ charge.location }}</span>
+        <span class="cost">CHF {{ charge.costChf | number: '1.2-2' }}</span>
+      </div>
+      <dl>
+        <div>
+          <dt>Duration</dt>
+          <dd>{{ charge.durationMinutes }} minutes</dd>
+        </div>
+        <div>
+          <dt>Delivered</dt>
+          <dd>{{ charge.deliveredKwh }} kWh</dd>
+        </div>
+        <div>
+          <dt>Estimated Range</dt>
+          <dd>{{ charge.estimatedRangeKm }} km</dd>
+        </div>
+        <div>
+          <dt>Started</dt>
+          <dd>{{ charge.startTimeUtc | date: 'medium' }}</dd>
+        </div>
+      </dl>
+    </article>
+  </div>
+</section>

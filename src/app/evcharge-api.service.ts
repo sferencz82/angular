@@ -32,7 +32,7 @@ export interface ChargeSession {
 
 @Injectable({ providedIn: 'root' })
 export class EvChargeApiService {
-  private readonly baseUrl = 'http://localhost:5000';
+  private readonly baseUrl = 'https://localhost:50739';
 
   constructor(private readonly http: HttpClient) {}
 

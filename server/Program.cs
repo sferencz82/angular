@@ -23,11 +23,12 @@ var app = builder.Build();
 
 app.UseCors();
 
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "EV Charging API v1");
+    options.RoutePrefix = string.Empty;
+});
 
 app.MapGet("/charges", (IChargeRepository repository) => Results.Ok(repository.GetAll()))
    .WithName("GetCharges")

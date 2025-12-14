@@ -1,0 +1,29 @@
+<section class="customers">
+  <header>
+    <h2>Customers</h2>
+    <p>Review each EV driver and the vehicles they have registered.</p>
+  </header>
+
+  <div class="status" *ngIf="isLoading">Loading customers…</div>
+  <div class="status error" *ngIf="!isLoading && errorMessage">{{ errorMessage }}</div>
+
+  <div class="customer-grid" *ngIf="!isLoading && !errorMessage">
+    <article class="customer-card" *ngFor="let customer of customers">
+      <h3>{{ customer.name }}</h3>
+      <p class="email">{{ customer.email }}</p>
+
+      <div *ngIf="customer.vehicles?.length; else noVehicles">
+        <h4>Vehicles</h4>
+        <ul>
+          <li *ngFor="let vehicle of customer.vehicles">
+            <strong>{{ vehicle.make }} {{ vehicle.model }}</strong>
+            <span class="meta"> • {{ vehicle.year }}</span>
+          </li>
+        </ul>
+      </div>
+      <ng-template #noVehicles>
+        <p class="muted">No vehicles recorded for this customer.</p>
+      </ng-template>
+    </article>
+  </div>
+</section>

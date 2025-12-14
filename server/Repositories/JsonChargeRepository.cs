@@ -34,7 +34,7 @@ public class JsonChargeRepository : IChargeRepository
                 PropertyNameCaseInsensitive = true
             });
 
-            return charges?.AsReadOnly() ?? Array.Empty<ChargeSession>();
+            return (charges ?? new List<ChargeSession>()).AsReadOnly();
         }
         catch (Exception ex)
         {

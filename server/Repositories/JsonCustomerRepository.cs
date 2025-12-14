@@ -33,7 +33,7 @@ public class JsonCustomerRepository : ICustomerRepository
                 PropertyNameCaseInsensitive = true
             });
 
-            return customers?.AsReadOnly() ?? Array.Empty<Customer>();
+            return (customers ?? new List<Customer>()).AsReadOnly();
         }
         catch (Exception ex)
         {

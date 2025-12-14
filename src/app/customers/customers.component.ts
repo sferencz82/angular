@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { EvChargeApiService, Customer } from '../evcharge-api.service';
 import { TitleService } from '../title.service';
 
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './customers.component.html',
   styleUrl: './customers.component.css'
 })

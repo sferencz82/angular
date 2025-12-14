@@ -67,3 +67,15 @@ header h2 {
   color: #6b7280;
   margin: 0;
 }
+
+.charges-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.charges-link:hover {
+  text-decoration: underline;
+}

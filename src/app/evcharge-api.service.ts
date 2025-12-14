@@ -2,27 +2,30 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 
-export interface Vehicle {
-  id: number;
+export interface Car {
+  id: string;
   make: string;
   model: string;
-  year: number;
+  type: string;
+  batteryKWh: number;
+  plate: string;
 }
 
 export interface Customer {
-  id: number;
+  id: string;
   name: string;
   email: string;
-  vehicles: Vehicle[];
+  cars: Car[];
 }
 
 export interface ChargeSession {
-  id: number;
-  customerId: number;
+  id: string;
+  customerId: string;
+  carId: string;
   location: string;
-  costChf: number;
+  priceChf: number;
   durationMinutes: number;
-  deliveredKwh: number;
+  energyKWh: number;
   estimatedRangeKm: number;
   startTimeUtc: string;
 }
@@ -52,13 +55,18 @@ export class EvChargeApiService {
     );
   }
 
+  async getCustomer(customerId: string): Promise<Customer | undefined> {
+    const customers = await this.getCustomers();
+    return customers.find((customer) => customer.id === customerId);
+  }
+
   async getAllCharges(): Promise<ChargeSession[]> {
     return firstValueFrom(
       this.http.get<ChargeSession[]>(`${this.baseUrl}/charges`, { headers: this.buildHeaders() })
     );
   }
 
-  async getChargesForCustomer(customerId: number): Promise<ChargeSession[]> {
+  async getChargesForCustomer(customerId: string): Promise<ChargeSession[]> {
     return firstValueFrom(
       this.http.get<ChargeSession[]>(`${this.baseUrl}/customers/${customerId}/charges`, {
         headers: this.buildHeaders()

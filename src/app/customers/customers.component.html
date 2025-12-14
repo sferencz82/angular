@@ -12,18 +12,20 @@
       <h3>{{ customer.name }}</h3>
       <p class="email">{{ customer.email }}</p>
 
-      <div *ngIf="customer.vehicles?.length; else noVehicles">
-        <h4>Vehicles</h4>
+      <div *ngIf="customer.cars?.length; else noVehicles">
+        <h4>Cars</h4>
         <ul>
-          <li *ngFor="let vehicle of customer.vehicles">
-            <strong>{{ vehicle.make }} {{ vehicle.model }}</strong>
-            <span class="meta"> • {{ vehicle.year }}</span>
+          <li *ngFor="let car of customer.cars">
+            <strong>{{ car.make }} {{ car.model }}</strong>
+            <span class="meta"> • {{ car.type }} • {{ car.batteryKWh }} kWh • {{ car.plate }}</span>
           </li>
         </ul>
       </div>
       <ng-template #noVehicles>
-        <p class="muted">No vehicles recorded for this customer.</p>
+        <p class="muted">No cars recorded for this customer.</p>
       </ng-template>
+
+      <a class="charges-link" [routerLink]="['/customers', customer.id, 'charges']">View charge history</a>
     </article>
   </div>
 </section>

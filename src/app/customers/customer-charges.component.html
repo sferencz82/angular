@@ -1,7 +1,10 @@
-<section class="charges">
+<section class="customer-charges">
   <header>
-    <h2>Recent Charges</h2>
-    <p>Latest charging sessions across all customers.</p>
+    <div class="title-group">
+      <a routerLink="/customers" class="back">← Back to customers</a>
+      <h2>Charge history</h2>
+      <p *ngIf="customer" class="subtitle">{{ customer.name }} • {{ customer.email }}</p>
+    </div>
   </header>
 
   <div class="status" *ngIf="isLoading">Loading charges…</div>
@@ -11,9 +14,13 @@
     <article class="charge-card" *ngFor="let charge of charges">
       <div class="charge-header">
         <span class="location">{{ charge.location }}</span>
-        <span class="cost">CHF {{ charge.priceChf | number: '1.2-2' }}</span>
+        <span class="car">{{ carLabelFor(charge) }}</span>
       </div>
       <dl>
+        <div>
+          <dt>Price</dt>
+          <dd>CHF {{ charge.priceChf | number: '1.2-2' }}</dd>
+        </div>
         <div>
           <dt>Duration</dt>
           <dd>{{ charge.durationMinutes }} minutes</dd>

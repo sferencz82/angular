@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "EVCharging.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50739;http://localhost:50740"
+    }
+  }
+}

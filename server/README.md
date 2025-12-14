@@ -7,7 +7,7 @@ A lightweight EV charging backend that serves seeded customer and charging sessi
 - `GET /customers` – All customers with their vehicles.
 - `GET /customers/{id}/charges` – Charges for a specific customer. Returns `404` when the customer or their charges are missing.
 
-Swagger is enabled in development to explore the endpoints interactively.
+Swagger is enabled by default and served at the application root so the API boots directly into the documentation UI.
 
 ## Data seeding
 Seed data is stored in `seed/customers.json` and `seed/charges.json` and is copied to the output on build. Update these files to adjust sample customers, vehicles, or charging sessions.
@@ -19,6 +19,6 @@ Seed data is stored in `seed/customers.json` and `seed/charges.json` and is copi
    dotnet restore
    dotnet run
    ```
-3. Open `http://localhost:5000/swagger` (or the port shown in the console) to try the endpoints.
+3. Open `http://localhost:5000/` (or the port shown in the console) to try the endpoints; you will land on the Swagger UI by default.
 
 CORS is open by default to simplify local frontend integration.
